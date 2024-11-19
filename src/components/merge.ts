@@ -1,11 +1,11 @@
-import type { PortableTextComponents, PortableTextReactComponents } from '../types';
+import type {PortableTextComponents, PortableTextReactComponents} from '../types'
 
 export function mergeComponents(
   parent: PortableTextReactComponents,
   overrides: PortableTextComponents,
 ): PortableTextReactComponents {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { block, list, listItem, marks, types, ...rest } = overrides;
+  const {block, list, listItem, marks, types, ...rest} = overrides
   // @todo figure out how to not `as ...` these
   return {
     ...parent,
@@ -15,7 +15,7 @@ export function mergeComponents(
     marks: mergeDeeply(parent, overrides, 'marks') as PortableTextReactComponents['marks'],
     types: mergeDeeply(parent, overrides, 'types') as PortableTextReactComponents['types'],
     ...rest,
-  };
+  }
 }
 
 function mergeDeeply(
@@ -23,23 +23,20 @@ function mergeDeeply(
   overrides: PortableTextComponents,
   key: 'block' | 'list' | 'listItem' | 'marks' | 'types',
 ): PortableTextReactComponents[typeof key] {
-  const override = overrides[key];
-  const parentVal = parent[key];
+  const override = overrides[key]
+  const parentVal = parent[key]
 
   if (typeof override === 'function') {
-    return override;
+    return override
   }
 
   if (override && typeof parentVal === 'function') {
-    return override;
+    return override
   }
 
   if (override) {
-    return {
-      ...parentVal,
-      ...override,
-    } as PortableTextReactComponents[typeof key];
+    return {...parentVal, ...override} as PortableTextReactComponents[typeof key]
   }
 
-  return parentVal;
+  return parentVal
 }

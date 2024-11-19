@@ -1,8 +1,6 @@
-import { Link } from '@react-email/components';
-
 import type { TypedObject } from '@portabletext/types';
-
-import type { PortableTextMarkComponent } from '../types';
+import { Link } from '@react-email/components';
+import { PortableTextMarkComponent } from '../types';
 
 interface DefaultLink extends TypedObject {
   _type: 'link';
@@ -14,10 +12,53 @@ const link: PortableTextMarkComponent<DefaultLink> = ({ children, value }) => (
 );
 
 export const defaultMarks: Record<string, PortableTextMarkComponent | undefined> = {
-  em: ({ children }) => <span className="italic">{children}</span>,
-  strong: ({ children }) => <span className="font-bold">{children}</span>,
-  code: ({ children }) => <code>{children}</code>,
-  underline: ({ children }) => <span className="underline">{children}</span>,
-  'strike-through': ({ children }) => <span className="line-through">{children}</span>,
+  em: ({ children }) => (
+    <span
+      style={{
+        fontStyle: 'italic',
+      }}
+    >
+      {children}
+    </span>
+  ),
+  strong: ({ children }) => (
+    <span
+      style={{
+        fontWeight: 'bold',
+      }}
+    >
+      {children}
+    </span>
+  ),
+  code: ({ children }) => (
+    <span
+      style={{
+        fontFamily: 'monospace',
+        backgroundColor: '#f3f4f6',
+        padding: '4px',
+        borderRadius: '6px',
+      }}
+    >
+      {children}
+    </span>
+  ),
+  underline: ({ children }) => (
+    <span
+      style={{
+        textDecoration: 'underline',
+      }}
+    >
+      {children}
+    </span>
+  ),
+  'strike-through': ({ children }) => (
+    <span
+      style={{
+        textDecoration: 'line-through',
+      }}
+    >
+      {children}
+    </span>
+  ),
   link,
 };

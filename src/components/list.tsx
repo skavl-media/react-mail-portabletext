@@ -1,4 +1,4 @@
-import type { PortableTextListComponent, PortableTextListItemComponent } from '../types';
+import { PortableTextListComponent, PortableTextListItemComponent } from '../types';
 
 export const defaultLists: Record<'number' | 'bullet', PortableTextListComponent> = {
   number: ({ children }) => <ol>{children}</ol>,

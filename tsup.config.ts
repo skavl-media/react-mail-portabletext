@@ -1,15 +1,15 @@
-import { type Options, defineConfig } from "tsup";
+import { type Options, defineConfig } from 'tsup';
 
 const common: Options = {
-  entry: ["src/index.ts"],
+  entry: ['src/index.ts'],
   treeshake: false,
-  sourcemap: "inline",
+  sourcemap: 'inline',
   minify: true,
   clean: true,
   dts: true,
   splitting: false,
-  format: ["cjs", "esm"],
-  external: ["react"],
+  format: ['cjs', 'esm'],
+  external: ['react'],
   injectStyle: false,
 };
 
