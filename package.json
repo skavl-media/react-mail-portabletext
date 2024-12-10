@@ -8,6 +8,9 @@
     "prepublishOnly": "pnpm run build",
     "build": "tsup"
   },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
