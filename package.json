@@ -9,7 +9,8 @@
     "build": "tsup"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "type": "module",
   "main": "./dist/index.cjs",
