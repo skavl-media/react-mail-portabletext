@@ -1,4 +1,5 @@
 import { Text, Heading } from '@react-email/components';
+
 import type { PortableTextBlockStyle } from '@portabletext/types';
 
 import type { PortableTextBlockComponent, PortableTextReactComponents } from '../types';
@@ -21,11 +22,15 @@ export const defaultBlockStyles: Record<
 > = {
   normal: ({ children }) => <p>{children}</p>,
   blockquote: ({ children }) => (
-    <blockquote>
-      <Text>{children}</Text>
+    <blockquote className="p-4 my-4 bg-gray-50 border-l-4 border-gray-900">
+      <Text className="text-xl italic font-medium leading-relaxed text-gray-900">{children}</Text>
     </blockquote>
   ),
-  h1: ({ children }) => <Heading as="h1">{children}</Heading>,
+  h1: ({ children }) => (
+    <Heading as="h1" className="font-fredoka">
+      {children}
+    </Heading>
+  ),
   h2: ({ children }) => <Heading as="h2">{children}</Heading>,
   h3: ({ children }) => <Heading as="h3">{children}</Heading>,
   h4: ({ children }) => <Heading as="h4">{children}</Heading>,

@@ -160,8 +160,8 @@ export interface PortableTextReactComponents {
    * Will by default render a `<br />`. Pass `false` to render as-is (`\n`)
    */
   // @TODO find a better way to handle this
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  hardBreak: ComponentType<{}> | false;
+  // @ts-expect-error - this is a hack
+  hardBreak: ComponentType<P> | false;
 
   /**
    * React component used when encountering a mark type there is no registered component for
