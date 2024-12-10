@@ -2,6 +2,9 @@
   "name": "@skavl-media/react-mail-portabletext",
   "version": "1.0.0",
   "description": "portable text to react email",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
