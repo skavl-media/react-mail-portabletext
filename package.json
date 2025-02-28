@@ -1,6 +1,6 @@
 {
   "name": "@skavl-media/react-mail-portabletext",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "portable text to react email",
   "publishConfig": {
     "access": "public"
@@ -31,17 +31,17 @@
   "author": "Skval Media",
   "license": "MIT",
   "dependencies": {
-    "@portabletext/toolkit": "^2.0.16",
-    "@portabletext/types": "^2.0.13"
+    "@portabletext/toolkit": "2.0.17",
+    "@portabletext/types": "2.0.13"
   },
   "peerDependencies": {
-    "react": "19.0.0",
+    "react": "19.x",
     "@react-email/components": ">=0.0.28",
-    "@types/react": "19.0.1"
+    "@types/react": "19.x"
   },
   "devDependencies": {
-    "prettier": "3.4.2",
-    "tsup": "8.3.5",
-    "typescript": "5.7.2"
+    "prettier": "3.5.2",
+    "tsup": "8.4.0",
+    "typescript": "5.7.3"
   }
 }
